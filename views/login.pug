@@ -1,0 +1,19 @@
+extends layout
+
+block content
+    .loginPage
+        h2= title
+        hr
+        form(action="" method="POST")
+            .form_input 
+                label(for="email") Email:
+                input(type="email" name="email" id="email")
+
+            .form_input 
+                label(for="password") Password:
+                input(type="password" name="password" id="password")
+
+            .form_input
+                button.loginButton(type="submit" class="button_small") Log In
+
+        

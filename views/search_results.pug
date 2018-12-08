@@ -1,0 +1,13 @@
+extends layout
+
+include mixins/_hotel
+
+block content
+    h2=title
+    //- loop through all hotels returned from matched query and display each one
+    each hotel in searchData 
+        .hotel_wrapper 
+            +hotel(hotel, searchQuery)
+    
+
+

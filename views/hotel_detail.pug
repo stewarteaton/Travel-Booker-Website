@@ -1,0 +1,15 @@
+extends layout
+include mixins/_hotel
+
+block content
+    .hotel_deatil_page
+        //- h2= title
+        each hotel in hotelData
+            .hotel
+                //- <!-- url variable we created in app.js with middleware -->
+                if url.startsWith('/admin')
+                    a(href=`${hotel._id}/update`)
+                        button(class="button_small") Update Hotel
+                    a(href=`${hotel._id}/delete`)
+                        button(class="button_small") Delete Hotel
+                +hotel(hotel)

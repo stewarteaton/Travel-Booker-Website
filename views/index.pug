@@ -1,0 +1,24 @@
+extends layout
+include mixins/_hotel
+include mixins/_country_list
+
+block content
+
+  .outer_wrapper
+    .hotel_wrapper
+      h2 Hotels
+        a(href="/all") (see all):
+      ul
+        each hotel in filteredHotels
+          +hotel(hotel)
+      <!--Syntax for calling Mixin-->
+    
+    .country_wrapper 
+      h2 Countries
+        a(href="/countries") (See all)
+      ul  
+        each country in filteredCountries
+          //- Must use ._id because thats how we configues in homePageFileter in hotelController file
+          +countryList(country._id)
+            
+          

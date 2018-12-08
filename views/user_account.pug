@@ -1,0 +1,18 @@
+extends layout
+include mixins/_orders 
+
+block content
+    h2= title
+    hr
+
+    if user
+        h3= `Hello, ${user.first_name}!`
+
+        if orders.length > 0
+            h3 Your bookings:
+            each order in orders
+                +orders(order)  
+        else
+            h3 No current orders... 
+    else
+        h3 Please log in to view this section 
